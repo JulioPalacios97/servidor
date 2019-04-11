@@ -11,6 +11,13 @@ function PostCompany(e){  // PUROS FORMS
 	})
 	return false;
 }
+
+function PostBrand(e){  // PUROS FORMS
+	$.post("/modelo",$( "#InsertbrandForm" ).serialize()).done((data)=>{
+		alert(data.msg)
+	})
+	return false;
+}
 function DeleteRoute(e){
 	$.post("/rutas/delete/",$( "#Eliminar" ).serialize()).done((data)=>{
 		alert(data.msg)
@@ -41,6 +48,18 @@ function getCompany(e){
 	return false;
 }
 
+function getBrand(e){
+	let id=$("#up-id").val()
+	console.log(id)
+	$.get("/modelo/"+id).done((data)=>{
+		$("#id7").val(data[0].company_name)
+		$("#id8").val(data[0].address)
+		$("#id9").val(data[0].telephone)
+	})
+	return false;
+}
+
+
 function putRoute(e){
 	let id=$("#up-id").val()
 	console.log(id)
@@ -52,7 +71,12 @@ function putRoute(e){
 // PUROS BOTONES
 $("#Insert").on('click',PostRoute);
 $("#Insertcompany").on('click',PostCompany);
+$("#Insertbrand").on('click',PostBrand);
+
 $("#Delete").on('click',DeleteRoute);
+
 $("#Search").on('click',getRoute);
 $("#Searchcompany").on('click',getCompany);
+$("#Searchbrand").on('click',getBrand);
+
 $("#Update").on('click',putRoute);
