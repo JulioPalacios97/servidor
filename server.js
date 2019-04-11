@@ -4,7 +4,7 @@ const app= express();
 const bodyParser=require('body-parser')
 const indexRouter=require("./rutas/routes");
 const companyRouter=require("./rutas/companies");
-const brandRouter=require("./rutas/brand")
+const brandRouter=require("./rutas/brand");
 app.use(bodyParser());
 app.use("/public",express.static(__dirname+'/public/'));
 
