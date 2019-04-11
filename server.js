@@ -9,7 +9,7 @@ app.use("/public",express.static(__dirname+'/public/'));
 
 app.use("/rutas",indexRouter);
 app.use("/companias",companyRouter);
-app.use("/*",express.static(__dirname+'/public/index.html'));
+app.use("/*",(req,res)=>{res.sendFile(__dirname+'/public/index.html')});
 
 /*
 app.use("/*",(req,res)=>{
