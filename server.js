@@ -13,4 +13,4 @@ app.use("/",companyRouter);
 app.use("/*",(req,res)=>{
 	res.sendFile(__dirname+"/public/index.html");
 })*/
-app.listen(3000,()=>console.log("Listening on http://localhost:3000"));
+app.listen(80,()=>console.log("Listening on http://localhost:3000"));
