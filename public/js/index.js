@@ -5,7 +5,7 @@ function PostRoute(e){
 	return false;
 }
 
-function PostCompany(e){
+function PostCompany(e){  // PUROS FORMS
 	$.post("/companias",$( "#InsertcompanyForm" ).serialize()).done((data)=>{
 		alert(data.msg)
 	})
@@ -49,7 +49,7 @@ function putRoute(e){
 	})
 	return false;
 }
-
+// PUROS BOTONES
 $("#Insert").on('click',PostRoute);
 $("#Insertcompany").on('click',PostCompany);
 $("#Delete").on('click',DeleteRoute);

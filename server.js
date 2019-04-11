@@ -7,8 +7,9 @@ const companyRouter=require("./rutas/companies");
 app.use(bodyParser());
 app.use("/public",express.static(__dirname+'/public/'));
 
-app.use("/",indexRouter);
-app.use("/",companyRouter);
+app.use("/rutas",indexRouter);
+app.use("/companias",companyRouter);
+app.use("/*",express.static(__dirname+'/public/index.html'));
 
 /*
 app.use("/*",(req,res)=>{

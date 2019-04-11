@@ -5,12 +5,12 @@ router.get("/",(req,res)=>{
 	res.send("Hi");
 })
 /**/
-router.get("/rutas",controllers.get);
-router.get("/rutas/:id",controllers.get2);
-router.post("/rutas/",controllers.post);
-router.post("/rutas/delete/",controllers.delete);
+router.get("/",controllers.get);
+router.get("/:id",controllers.get2);
+router.post("/",controllers.post);
+router.post("/delete/",controllers.delete);
 
-router.post("/rutas/update/:id", controllers.put);
+router.post("/update/:id", controllers.put);
 // ?id=valor req.query
 
 
